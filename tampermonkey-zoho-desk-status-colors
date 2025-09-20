@@ -1,0 +1,83 @@
+// ==UserScript==
+// @name         Zoho Desk Status Colors (no ribbons)
+// @namespace    http://tampermonkey.net/
+// @version      2.6
+// @description  Custom status colors with ribbons hidden
+// @match        https://your-zoho-desk-domain/*
+// @grant        none
+// ==/UserScript==
+(function() {
+    'use strict';
+    const COLORS = {
+        'Closed':        { bg: '#686868', border: '#686868', text: '#f0f0f0' },
+        'Open':          { bg: '#4ec95c', border: '#4ec95c', text: '#000000' },
+        'In Progress':   { bg: '#e8bd51', border: '#e8bd51', text: '#000000' },
+        'On Hold':       { bg: '#688fb3', border: '#688fb3', text: '#000000' },
+        'Waiting Reply': { bg: '#b567b5', border: '#b567b5', text: '#000000' },
+        'Escalated':     { bg: '#DC3545', border: '#DC3545', text: '#ffffff' }
+    };
+
+    function applyColors(el, colors) {
+        el.style.backgroundColor = colors.bg;
+        el.style.border = '1px solid ' + colors.border;
+        el.style.color = colors.text;
+    }
+
+    function updateButtonsAndRibbons() {
+        // Status buttons (dropdown & LH field)
+        document.querySelectorAll('button[data-test-id="tktStatus"], button[data-test-id="LHStatusField"]')
+            .forEach(btn => {
+                const statusDiv = btn.querySelector('div[data-title]');
+                if (!statusDiv) return;
+                const title = statusDiv.getAttribute('data-title');
+                const colors = COLORS[title];
+                if (!colors) return;
+                applyColors(btn, colors);
+                const labelSpan = btn.querySelector('.zd_v2-ticketstatusdropdown-label');
+                if (labelSpan) applyColors(labelSpan, colors);
+                statusDiv.style.color = colors.text;
+            });
+
+        // Hide all ribbons
+        document.querySelectorAll('div[data-test-id="divclosed"], div[data-test-id="divhold"]')
+            .forEach(ribbonDiv => {
+                ribbonDiv.style.setProperty('display', 'none', 'important');
+                // Also hide the parent container if it's just for the ribbon
+                const parentContainer = ribbonDiv.parentElement;
+                if (parentContainer && parentContainer.children.length === 1) {
+                    parentContainer.style.setProperty('display', 'none', 'important');
+                }
+            });
+
+        // Status dropdown list indicators only
+        document.querySelectorAll('li[data-test-id], li[data-id]')
+            .forEach(listItem => {
+                const statusDiv = listItem.querySelector('div[data-title]');
+                if (!statusDiv) return;
+                const title = statusDiv.getAttribute('data-title');
+                const colors = COLORS[title];
+                if (!colors) return;
+
+                const statusIndicator = listItem.querySelector('.zd_v2-statuslistitem-statusType');
+                if (statusIndicator) {
+                    statusIndicator.style.setProperty('background-color', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_orange_bg', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_green_bg', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_blue_bg', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_red_bg', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_purple_bg', colors.bg, 'important');
+                    statusIndicator.style.setProperty('--zdt_statuslistitem_gray_bg', colors.bg, 'important');
+                }
+
+                if (listItem.getAttribute('aria-selected') === 'true') {
+                    listItem.style.setProperty('background-color', colors.bg + '15', 'important');
+                }
+            });
+    }
+
+    window.addEventListener('load', () => {
+        updateButtonsAndRibbons();
+        new MutationObserver(updateButtonsAndRibbons)
+            .observe(document.body, { childList: true, subtree: true });
+    });
+})();
