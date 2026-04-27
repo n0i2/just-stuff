@@ -1,0 +1,102 @@
+## Source: https://engine.mk.ua/pc/ubiraem-reklamu-v-vajbere-na-pk-s-windows/
+
+### Viber ads domain list
+127.0.0.1 ads.viber.com
+127.0.0.1 ads.aws.viber.com
+127.0.0.1 ads-d.viber.com
+127.0.0.1 ads.cdn.viber.com
+127.0.0.1 ads.*.viber.com
+127.0.0.1 ad.primis.tech
+127.0.0.1 api.taboola.com
+127.0.0.1 api.mixpanel.com
+127.0.0.1 ams1-mobile.adnxs.com
+127.0.0.1 cdn.taboola.com
+127.0.0.1 contact.primis.tech
+127.0.0.1 data.mixpanel.com
+127.0.0.1 feed.avplayer.com
+127.0.0.1 fra1-ib.adnxs.com
+127.0.0.1 images.taboola.com
+127.0.0.1 locp-ir.viber.com
+127.0.0.1 live.primis.tech
+127.0.0.1 live-eu-am.primis.tech
+127.0.0.1 live-us-ny.primis.tech
+127.0.0.1 live.primis-amp.tech
+127.0.0.1 mediation.adnxs.com
+127.0.0.1 mobile.anycast.adnxs.com
+127.0.0.1 mobile.geo.appnexusgslb.net
+127.0.0.1 pagead2.googlesyndication.com
+127.0.0.1 player.avplayer.com
+127.0.0.1 primis-d.openx.net
+127.0.0.1 primisttd-d.openx.net
+127.0.0.1 primis.tech
+127.0.0.1 primis-amp.tech
+127.0.0.1 rtb.primis.tech
+127.0.0.1 rmp.rakuten.com
+127.0.0.1 stats.viber.com
+127.0.0.1 securepubads.g.doubleclick.net
+127.0.0.1 s-clk.rmp.rakuten.com
+127.0.0.1 s-bid.rmp.rakuten.com
+127.0.0.1 s-imp.rmp.rakuten.com
+127.0.0.1 s-cs.rmp.rakuten.com
+127.0.0.1 s.pc.qq.com
+127.0.0.1 sy.guanjia.qq.com
+127.0.0.1 syzs.qq.com
+127.0.0.1 tracking.viber.com
+127.0.0.1 viberee.olasent.top
+127.0.0.1 video.primis.tech
+127.0.0.1 www.viberee.olasent.top
+127.0.0.1 www.primis.tech
+
+# added 2025-05
+127.0.0.1 prebid-server.rubiconproject.com
+127.0.0.1 ads.yieldmo.com
+127.0.0.1 rw.yieldmo.com
+127.0.0.1 use1-ads-proxy-temp-prebid-v3.yieldmo.com
+127.0.0.1 fksnk.com
+127.0.0.1 sync.lunamedia.live
+127.0.0.1 cs-server-s2s.yellowblue.io
+127.0.0.1 pulsepoint-match.dotomi.com
+127.0.0.1 eventer-player.bqstreamer.com
+127.0.0.1 cdnmedia.sendtonews.com
+127.0.0.1 factor-service.prod.voltaxservices.io
+127.0.0.1 player-prediction.voltaxservices.io    
+127.0.0.1 selector.voltaxam.com
+
+# added 2025-06
+127.0.0.1 data-event-proxy.viber.com 
+127.0.0.1 s2l.sendtonews.com 
+127.0.0.1 playlist.stnvideo.com 
+127.0.0.1 pb-ing-minutemedia.ccgateway.net 
+127.0.0.1 embed.sendtonews.com 
+127.0.0.1 mp.mmvideocdn.com 
+127.0.0.1 eventer-player.bqstreamer.com 
+127.0.0.1 cdnmedia.sendtonews.com 
+127.0.0.1 factor-service.prod.voltaxservices.io 
+127.0.0.1 player-prediction.voltaxservices.io 
+127.0.0.1 selector.voltaxam.com 
+#127.0.0.1 *.mmvideocdn.com 
+#127.0.0.1 *.voltaxservices.io
+
+# 2025-08
+127.0.0.1 geolocation.onetrust.com
+127.0.0.1 cdn.cookielaw.org
+127.0.0.1 privacyportal.onetrust.com
+127.0.0.1 sendtonews.com
+127.0.0.1 mp.mmvideocdn.com
+127.0.0.1 embed.sendtonews.com
+
+# 2026-02
+127.0.0.1 rmp.rakuten.com
+127.0.0.1 s-bid.rmp.rakuten.com
+127.0.0.1 s-imp.rmp.rakuten.com
+127.0.0.1 s-clk.rmp.rakuten.com
+127.0.0.1 api.taboola.com
+127.0.0.1 images.taboola.com
+127.0.0.1 ams1-mobile.adnxs.com
+127.0.0.1 fra1-ib.adnxs.com
+127.0.0.1 mediation.adnxs.com
+127.0.0.1 api.mixpanel.com
+127.0.0.1 locp-ir.viber.com
+127.0.0.1 mp.mmvideocdn.com
+127.0.0.1 sendtonews.com
+127.0.0.1 embed.sendtonews.com
